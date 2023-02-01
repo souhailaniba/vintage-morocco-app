@@ -1,0 +1,28 @@
+<div class="register">
+    <h1 class="title">
+      Welcome to Vintage Morocco !!
+    </h1>
+        
+    <form class="register-form"  #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-title"> Login Form !</div>
+        <div class="error-message" [hidden]="!error">
+            {{error}}
+        </div>
+        <div class="register-field">
+            <label for="email">Email:</label>
+            <input type="email" name="name" placeholder="Enter your email"  class="form-control" [(ngModel)]="form.email" required>
+        </div>
+        
+        <div class="register-field">
+            <label for="password" >Password:</label>
+            <input type="password"  name="password" placeholder="Enter your password" class="form-control" [(ngModel)]="form.password" required>
+        </div>
+        <button type="submit" class="submit-button" [disabled]="!loginForm.valid">Login</button>
+        
+    </form>
+    <div class="or"><hr/>Or <hr/></div>    
+    <div class="register-button" >
+            <a   routerLink="/Register" routerLinkActive="active" ariaCurrentWhenActive="page">Create an account</a>
+            
+    </div>
+ </div> 

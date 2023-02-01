@@ -1,0 +1,51 @@
+
+
+
+
+<nav class="ournav" id="ournav">
+    <div class="navbar">
+        <div class="logo">
+             <a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page" ><img id="logo" src="../../assets/Images/LOGO-Vintage-05.png" ></a>
+        </div>
+     
+     
+     
+      <div  id="elements" >
+            <ul id="navbar">
+             
+              <li >
+                <a  routerLink="/Products" routerLinkActive="active" ariaCurrentWhenActive="page">Products</a>
+              </li>
+              <li >
+                <a  href="#" (click)="logout($event)" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Logout</a>
+              </li>
+              <li >
+                <a   routerLink="/Profile" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Profile</a>
+              </li>
+              <li >
+                <a    routerLink="/Login" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="!loggedIn">Login</a>
+              </li>
+              <li >
+                <a routerLink="/About" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+              </li>
+              <li >
+                <a  href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i></a>
+              </li>
+            </ul>
+      </div>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("ournav");
+          if (x.className === "ournav") {
+            x.className += " responsive";
+          } else {
+            x.className = "ournav";
+          }
+        }
+        </script>
+  </nav>
+  <router-outlet></router-outlet>
+  
+  

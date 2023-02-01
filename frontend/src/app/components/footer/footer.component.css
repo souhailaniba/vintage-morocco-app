@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+#logo{
+  height: 30px;
+  width: 30px;
+  
+}
+.logo{
+  margin: 20%;
+  
+}
+.footer{
+    background: #73BCA8;
+border-top: 4px solid  #373535;
+    display: block;
+    height: fit-content;
+    
+    text-align: center;
+    margin-bottom: 0%;
+    padding: 30px;
+    
+}
+.credits{
+    font-family:"Alfa Slab One";
+    background: none;
+    margin-bottom: 15px;
+}
+
+.line{
+  display: flex;
+    width: 40%;
+   height: 2px;
+    margin: auto;
+    background:   #373535;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.icons{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 68px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+ 
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }

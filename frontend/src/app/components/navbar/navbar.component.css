@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+*{
+  font-family: "Alfa Slab One";
+}
+.ournav {
+  
+   
+   justify-content: space-between ;
+   background: #ECE6C2;
+   align-items: center;
+   padding: 0px 50px;
+  }
+  .navbar{
+  	display: flex;
+      display: flex !important ;
+    align-items: center;
+    justify-content: space-between ;
+
+  }
+ 
+ #logo{
+ 	height: 100px;
+ 	width: 100px;
+ 	margin-left: 30px;
+ }
+  #navbar {
+    display: inline-flex;
+    align-items: right;
+    justify-content: center;
+  }
+  
+  #navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #373535;
+    transition: 0.3s ease-in-out;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color: #73BCA8
+  }
+ 
+a.icon{
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .ournav a:not(:first-child) {display: none;}
+  .ournav a.icon {
+    float: right;
+    display: block;
+  }
+  li a{
+    display: none;
+  }
+}

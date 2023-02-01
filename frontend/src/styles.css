@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+   /* background: #ECE6C2;*/
+   
+   font-family: "Alfa Slab One";    
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.ng-invalid:not(form){
+    border-right: 4px solid #CD6C4B   !important;
+}
+
+.ng-valid:not(form){
+    border-left: 4px solid #73BCA8  !important ;
+}

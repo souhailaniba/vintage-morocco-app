@@ -1,0 +1,38 @@
+<div class="register">
+    <h1 class="title">
+      Welcome to Vintage Morocco !!
+    </h1>
+        
+    <form class="register-form"  #registerForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-title"> Add Product !</div>
+        <div class="error-message" [hidden]="!error">
+            {{error}}
+        </div>
+
+        <div class="register-field">
+            <label for="title">Title:</label>
+            <input type="text" name="title" placeholder="Enter the product's label"  class="form-control"  [(ngModel)]="form.label" required>
+        </div>
+        <div class="register-field">
+            <label for="image">Image:</label>
+            <input type="file" name="image" id="imput"  placeholder="Enter the product's image"  class="form-control"  [(ngModel)]="form.image" required>
+        </div>
+        <div class="register-field">
+            <label for="price">Price:</label>
+            <input type="text" name="price"  placeholder="Enter the product's price"  class="form-control"  [(ngModel)]="form.price" required>
+        </div>
+        <div class="register-field">
+            <label for="category">Category:</label>
+            <input type="text" name="category" placeholder="Enter the product's category"  class="form-control"  [(ngModel)]="form.category" required>
+        </div>
+        <div class="register-field">
+            <label for="description">Description:</label>
+            <input type="text" name="description" placeholder="Enter the product's description" class="form-control"  [(ngModel)]="form.description" required>
+        </div>
+       
+        <div class="buttons">
+            <p ><button type="submit"  class="submit-button" [disabled]="!registerForm.valid">Register</button></p>
+            <p class="back"><a  routerLink="/Login"  routerLinkActive="active" ariaCurrentWhenActive="page" >Back to admin pannel</a></p>
+        </div>
+    </form>
+ </div> 

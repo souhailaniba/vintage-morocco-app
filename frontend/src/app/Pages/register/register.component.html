@@ -1,0 +1,41 @@
+<div class="register">
+    <h1 class="title">
+      Welcome to Vintage Morocco !!
+    </h1>
+        
+    <form class="register-form"  #registerForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-title"> Registration Form !</div>
+        <div class="error-message" [hidden]="!error">
+            {{error}}
+        </div>
+
+        <div class="register-field">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter your name"  class="form-control"  [(ngModel)]="form.name" required>
+        </div>
+        <div class="register-field">
+            <label for="email">Email:</label>
+            <input type="text" name="email" placeholder="Enter your email"  class="form-control"  [(ngModel)]="form.email" required>
+        </div>
+        <div class="register-field">
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" placeholder="Enter your phone number"  class="form-control"  [(ngModel)]="form.phone" required>
+        </div>
+        <div class="register-field">
+            <label for="address">Address:</label>
+            <input type="text" name="address" placeholder="Enter your address" class="form-control"  [(ngModel)]="form.address" required>
+        </div>
+        <div class="register-field">
+            <label for="password" >Password:</label>
+            <input type="password" name="password" placeholder="Enter your password" class="form-control"  [(ngModel)]="form.password" required>
+        </div>
+        <div class="register-field">
+            <label for="password_confirmation">Confirm Password:</label>
+            <input type="password" name="password_confirmation" placeholder="Enter your password" class="form-control"  [(ngModel)]="form.password_confirmation" required>
+        </div>
+        <div class="buttons">
+            <p ><button type="submit"  class="submit-button" [disabled]="!registerForm.valid">Register</button></p>
+            <p class="back"><a  routerLink="/Login"  routerLinkActive="active" ariaCurrentWhenActive="page" >Back to login</a></p>
+        </div>
+    </form>
+ </div> 
