@@ -6,8 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsService {
 
+  url:string = "http://localhost:8000" ;
+
   constructor(private http:HttpClient) { }
+  
   getAllProducts(){
-    return this.http.get('https://fakestoreapi.com/products');
+    return this.http.get<any>(this.url+'/api/Products');
   }
 }

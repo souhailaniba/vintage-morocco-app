@@ -11,7 +11,7 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UpdateuserComponent } from './Pages/updateuser/updateuser.component';
 import { AboutComponent } from './Pages/about/about.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { JarwisService } from './service/jarwis.service';
 import { AuthService } from './service/auth.service';
@@ -20,6 +20,7 @@ import { BeforeLoginService } from './service/before-login.service';
 import { AfterLoginService } from './service/after-login.service';
 import { AddProductComponent } from './Pages/add-product/add-product.component';
 import { ProductsService } from './service/products.service';
+
 
 const appRoutes: Routes = [
   {path: 'Products' , component:ProductsComponent , canActivate: [BeforeLoginService]},
