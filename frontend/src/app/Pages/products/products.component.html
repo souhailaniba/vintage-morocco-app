@@ -1,11 +1,18 @@
 <div class="product">
     <h2 class="title">Products!</h2>
-
-    <div class="cards" >
-            
-        <div class="card" *ngFor="let item of products">
+    
+        <div class=" categories">
+            <label for="" class="cats">Categories:</label>
+            <select class="options" (change)="filterCategory($event)">
+                <option value="All" selected >All</option>
+                <option value="{{option}}" *ngFor="let option of categories">{{option}}</option>
+            </select>
+        </div>
+   
+    <div class="row cards" > 
+        <div class=" col-md-3 col-sm-12 card" *ngFor="let item of products">
             <img src="{{item.image}}" alt="Denim Jeans">
-            <h1 class="label" >{{item.title}}</h1>
+            <h1 class="ourlabel" >{{item.title}}</h1>
             <p class="price" >{{item.price}} Dhs</p>
             <p class="description">{{item.description}}</p>
             <p><button>Add to Cart</button></p>
