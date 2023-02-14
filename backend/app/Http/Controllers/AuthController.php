@@ -16,12 +16,10 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        /*
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
-        */
         $credentials = $request->only('email', 'password');
 
         $token = Auth::attempt($credentials);
@@ -45,74 +43,32 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
-        
-        /*
-
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
+            'phone' => 'required|string|max:255',
+            'adress' => 'required|string|max:255',
+            'password' => 'required|string|min:4',
         ]);
 
-        */
-
-        $user = User::where('email',$request['email'])->first();
-
-        if($user){
-            $response['status'] = 0;
-            $response['message'] = 'Email already exists!';
-            $response['code'] = 409;
-        } else {
-            $user = User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'adress' => $request->adress,
-            //'password' => bcrypt($request->password)
-            'password' => Hash::make($request->password)
-            ]);
+            'password' => Hash::make($request->password),
+        ]);
 
-            $token = Auth::login($user);
-            $response['status'] = 'success';
-            $response['message'] = 'User registered successfully!';
-            $response['user'] = $user;
-            $response['authorisation'] = [
+        $token = Auth::login($user);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User created successfully',
+            'user' => $user,
+            'authorisation' => [
                 'token' => $token,
                 'type' => 'bearer',
-            ];
-            $response['code'] = 200;
-        }
-        
-        return response()->json($response);
-        
-        /*
-
-        $user = User::where('email',$request['email'])->first();
-
-        if($user){
-            $response['status'] = 0;
-            $response['message'] = 'Email already exists!';
-            $response['code'] = 409;
-        } else {
-            $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'adress' => $request->adress,
-            'password' => bcrypt($request->password)
+            ]
         ]);
-        
-        $response['status'] = 1;
-        $response['message'] = 'User registered successfully!';
-        $response['code'] = 200;
-        }
-        
-        
-        return response()->json($response);
-        
-        */
-        
-        
     }
 
     public function logout()

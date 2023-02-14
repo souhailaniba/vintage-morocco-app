@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class JarwisService {
-  private baseUrl = 'http//localhost:8000/api'
+  private baseUrl = 'http://localhost:8000/api'
   constructor(private http:HttpClient){}
 
   register(data){

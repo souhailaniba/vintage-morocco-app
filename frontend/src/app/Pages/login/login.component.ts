@@ -20,7 +20,6 @@ public error=null;
 
 
 constructor(
-  
   private Jarwis : JarwisService, 
   private Token: TokenService,
   private router : Router,
@@ -29,13 +28,12 @@ constructor(
 
 
 
-onSubmit(){
-
-  return this.Jarwis.register(this.form).subscribe({
-  next : (data) => this.handleResponse(data),
-  error : (e) => this.handleError(e)
-});
-}
+  onSubmit() {
+    this.Jarwis.login(this.form).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+    );
+  }
 
 handleResponse(data){
   this.Token.handle(data.access_token);

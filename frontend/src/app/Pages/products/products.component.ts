@@ -24,13 +24,14 @@ export class ProductsComponent  implements OnInit{
      alert(error)
     })
   }
-  getCategories(){
-    this.service.getAllCategories().subscribe((res:any)=>{
-      this.categories= res
-      console.log(res)
-    }, error =>{
-      alert(error)
-    })  
+  getCategories() {
+    this.service.getAllCategories().subscribe((res: any) => {
+      this.categories = res;
+      console.log(res);
+    }, error => {
+      console.error(error);
+      alert('Failed to get categories. Please try again later.');
+    });
   }
   filterCategory(event: any){
     let value = event.target.value;

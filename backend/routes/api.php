@@ -27,6 +27,14 @@ Route::get('/Products', function(){
     return ProductResource::collection(Product::all());
 });
 
+// Get products by category
+Route::get('Products/category/{category}', [ProductController::class, 'getProductsByCategory']);
+
+// Get all categories
+Route::get('/Products/categories', [ProductController::class, 'getAllCategories']);
+
+// New methods I'm trying out
+
 Route::put('/Product/{id}',[ProductController::class,'update']);
 
 Route::delete('/Product/{id}',[ProductController::class,'destroy']);
@@ -39,7 +47,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::post('/register',[UserController::class,'register']);
 
-
+/*
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
     Route::post('register', 'register');
@@ -47,7 +55,14 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 
 });
+*/
 
+Route::middleware('api')->group(function () {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+});
 
 /*
 Route::controller(TodoController::class)->group(function () {

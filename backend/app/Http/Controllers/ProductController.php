@@ -14,6 +14,7 @@ class ProductController extends Controller
         return Product::all();
     }
 
+
     //———————————————————————————————————————————————————————
 
     public function store(Request $request)
@@ -39,6 +40,7 @@ class ProductController extends Controller
             $product->image = $request -> image;
             $product->price = $request -> price;
             $product->description = $request -> description;
+            $product->category = $request -> category;
 
             $product->save();
 
@@ -69,4 +71,22 @@ class ProductController extends Controller
             ],404);
         }
     }
+
+    //———————————————————————————————————————————————————————
+
+    public function getProductsByCategory($category) {
+        $products = Product::where('category', $category)->get();
+        return response()->json($products);
+    }    
+
+    //———————————————————————————————————————————————————————
+    
+    public function getAllCategories()
+    {
+        $categories = Product::select('category')->distinct()->get()->pluck('category');
+
+        return response()->json($categories);
+    }
+    
+
 }
