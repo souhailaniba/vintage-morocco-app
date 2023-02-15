@@ -17,7 +17,8 @@ class CORS
     public function handle(Request $request, Closure $next)
 {
     $response = $next($request);
-    $response->header('Access-Control-Allow-Origin', 'http://127.0.0.1:4200');
+    // $response->header('Access-Control-Allow-Origin', 'http://127.0.0.1:4200');
+    $response->header('Access-Control-Allow-Origin', '*');
     $response->header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
     $response->header('Access-Control-Allow-Headers', 'Content-type, X-Auth-Token, Authorization, Origin');
     return $response;

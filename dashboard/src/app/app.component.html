@@ -1,0 +1,30 @@
+<!--topnavbar-->
+<div class="topnav shadow ">
+  <a [routerLink]="" class="title">Admin Dashboard</a>
+  <img src="..\assets\LOGO-Vintage-05.png" class="logo" >
+  <span class="menu"(click)="openNav(true)"><i class="bi bi-list"></i></span>
+</div>
+<!--End of topnav-->
+<!--Lest side nav-->
+<div class="sidenav shadow p-1" id="sidebar" [ngStyle]="responsiveMenu">
+  <ul>
+    <li><a routerLink="/dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+    <li><a routerLink="/reports"><i class="bi bi-card-text"></i>
+      Reports</a></li>
+    <li><a routerLink="/products"><i class="bi bi-bag"></i> 
+      Products<i class="bi bi-arrow-right icon"></i></a>
+        <ul class="dropdow-container">
+          <li><a routerLink="/addproduct">add product</a></li>
+        </ul>
+    </li>
+    <li><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+    <li><a routerLink="/login"><i class="bi bi-box-arrow-left"></i> Login</a></li>
+
+
+  </ul>
+
+</div>
+
+<div class="main-content" [ngStyle]="responsiveContent">
+  <router-outlet></router-outlet>
+</div>
