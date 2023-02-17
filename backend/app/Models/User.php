@@ -11,7 +11,7 @@ use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +22,7 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'phone',
-        'adress',
+        'address',
         'password',
     ];
 
@@ -57,7 +57,8 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function setPasswordAttribute($value){
-        return $this->attributes['password'] = bcrypt($value);
+        // $this->attributes['password'] = bcrypt($value);
+        $this->attributes['password'] = $value;
     }
 
 }

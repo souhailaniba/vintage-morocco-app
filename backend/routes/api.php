@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Resources\ProductResource;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,9 @@ Route::middleware('api')->group(function () {
     Route::post('register', [AuthController::class, 'register']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
+    // Draft
+    Route::post('log', [LogController::class, 'login']);
+    Route::post('reg', [LogController::class, 'register']);
 });
 
 /*
@@ -73,4 +77,9 @@ Route::controller(TodoController::class)->group(function () {
     Route::delete('todo/{id}', 'destroy');
 }); 
 */
+
+// New attempts 
+
+
+
 
