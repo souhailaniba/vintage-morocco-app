@@ -37,8 +37,8 @@ export class RegisterComponent implements OnInit {
  
    handleResponse(data) {
     this.Token.handle(data.access_token);
-    //this.router.navigateByUrl('/profile');
-    this.router.navigateByUrl('/Products');
+    this.router.navigateByUrl('/Login');
+    //this.router.navigateByUrl('/Products');
   }
   
 

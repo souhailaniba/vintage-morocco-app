@@ -38,8 +38,8 @@ constructor(
 handleResponse(data){
   this.Token.handle(data.access_token);
   this.Auth.changeAuthStatus(true);
-  //this.router.navigateByUrl('/profile');
-  this.router.navigateByUrl('/Products');
+  this.router.navigateByUrl('/Profile');
+  //this.router.navigateByUrl('/Products');
 }
 
 handleError(error) {

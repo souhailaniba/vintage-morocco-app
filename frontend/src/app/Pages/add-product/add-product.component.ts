@@ -34,8 +34,8 @@ export class AddProductComponent implements OnInit {
  
    handleResponse(data) {
     this.Token.handle(data.access_token);
-    //this.router.navigateByUrl('/profile');
-    this.router.navigateByUrl('/Products');
+    this.router.navigateByUrl('/Profile');
+    //this.router.navigateByUrl('/Products');
   }
   
 
