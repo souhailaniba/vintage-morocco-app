@@ -22,8 +22,8 @@ import { AddProductComponent } from './Pages/add-product/add-product.component';
 import { ProductsService } from './service/products.service';
 
 const appRoutes: Routes = [
-  {path: 'Products' , component:ProductsComponent , canActivate: [BeforeLoginService]},
-  {path: 'Home' , component:HomeComponent , canActivate: [BeforeLoginService]},
+  {path: 'Products' , component:ProductsComponent},
+  {path: 'Home' , component:HomeComponent},
   {path: 'Register' , component:RegisterComponent, canActivate: [BeforeLoginService]},
   {path: 'Login' , component:LoginComponent, canActivate: [BeforeLoginService]},
   {path : 'UpdateUser' , component:UpdateuserComponent},

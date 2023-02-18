@@ -39,6 +39,12 @@ export class TokenService {
   }
 
   loggedIn() {
+    const isRegistered = localStorage.getItem('isRegistered');
+    if (isRegistered) {
+      localStorage.removeItem('isRegistered');
+      return false;
+    }
     return this.isValid();
   }
+  
 }

@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
    }
  
    handleResponse(data) {
+    localStorage.setItem('isRegistered', 'true');
     this.Token.handle(data.access_token);
     this.router.navigateByUrl('/Login');
     //this.router.navigateByUrl('/Products');
