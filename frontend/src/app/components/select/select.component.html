@@ -1,0 +1,7 @@
+<div class=" categories">
+    <label for="" class="cats">{{title}}:</label>
+    <select class="options" (change)="detectChanges($event)">
+        <option value="All" selected >All</option>
+        <option value="{{option}}" *ngFor="let option of data">{{option}}</option>
+    </select>
+</div>

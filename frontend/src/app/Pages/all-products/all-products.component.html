@@ -1,0 +1,15 @@
+<div class="product">
+    <h2 class="title">Products!</h2>
+    
+        <app-select  [data]="categories" [title]="'Categories'" (selectedValue)="filterCategory($event)"></app-select>
+   
+    <div class="row cards" > 
+        <div class=" col-md-3 col-sm-12 card" *ngFor="let item of products">
+           <app-product [data]="item" (item)="addToCart($event)"></app-product>
+        </div>
+       
+    </div>
+
+   
+    
+</div>

@@ -22,8 +22,8 @@ border-bottom: 1px solid gray;
   .topnav .logo {
     width: 100px;
     height: 100px;
-    float: left;
-    padding: 5px 5px;
+    padding-bottom: 5px;
+    margin-left: 40px;
     
   }
 .menu{
