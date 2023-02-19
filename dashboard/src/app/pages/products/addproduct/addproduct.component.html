@@ -1,36 +1,39 @@
-<div class="container justify-content-center">
-    <h1> Add new Product</h1>
-   <div class="col-md-4">
-    <form [formGroup]="productform" (ngSubmit)="OnSubmit()">
-        <div>
-          <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="title" formControlName="title">
+<div class="register">
+    <h1 class="title"> 
+      Add a new Product !
+    </h1>
+   
+    <form class="register-form" [formGroup]="productform" (ngSubmit)="OnSubmit()">
+         
+          <div class="register-field">
+              <label for="name">Name :</label>
+              <input type="text" placeholder="Enter the product's name" class="form-control" id="title" formControlName="title" required>
             </div>
             
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" formControlName="price">
+            <div class="register-field">
+                <label for="price">Price :</label>
+                <input type="text" placeholder="Enter the product's price" class="form-control" id="price" formControlName="price" required>
             </div>
 
-            <div class="form-group">
-                <label for="category">category</label>
-                <input type="text" class="form-control" id="category" formControlName="category">
+            <div class="register-field">
+                <label for="category">Category :</label>
+                <input type="text" placeholder="Enter the product's category" class="form-control" id="category" formControlName="category" required>
             </div>
 
-            <div class="form-group">
-              <label for="description">Description</label>
-              <textarea type="text" class="form-control" id="description" formControlName="description" ></textarea>
+            <div class="register-field">
+              <label for="description">Description :</label>
+              <textarea type="text" placeholder="Enter the product's description" class="form-control" id="description" formControlName="description" required></textarea>
             </div>
         
-             <div class="form-group">
-              <label for="image">image</label>
-              <input type="text" class="form-control" id="image" formControlName="image">
+             <div class="register-field">
+              <label for="image">Image :</label>
+              <input type="text" placeholder="Enter the product's image URL" class="form-control" id="image" formControlName="image" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Product</button>
-        </div>
+            
+            <div class="buttons">
+              <p><button type="submit" class="submit-button" >Add Product</button></p>
+            </div>
+            
       </form>
-   </div>
-  
-  </div>
+</div>
   
