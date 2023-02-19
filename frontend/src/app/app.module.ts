@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule , Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './Pages/products/products.component';
+import { ProductsComponent } from './Pages/all-products/all-products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -18,8 +18,10 @@ import { AuthService } from './service/auth.service';
 import { TokenService } from './service/token.service';
 import { BeforeLoginService } from './service/before-login.service';
 import { AfterLoginService } from './service/after-login.service';
-import { AddProductComponent } from './Pages/add-product/add-product.component';
+
 import { ProductsService } from './service/products.service';
+import { SelectComponent } from './components/select/select.component';
+import { ProductComponent } from './Pages/product/product.component';
 
 const appRoutes: Routes = [
   {path: 'Products' , component:ProductsComponent},
@@ -29,7 +31,7 @@ const appRoutes: Routes = [
   {path : 'UpdateUser' , component:UpdateuserComponent},
   {path : 'About', component: AboutComponent},
   {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
-  {path : 'Add', component: AddProductComponent},
+ 
   {path : 'Products/category/:categoryName', component: ProductsComponent },
 
 ];
@@ -45,9 +47,10 @@ const appRoutes: Routes = [
     LoginComponent,
     AboutComponent,
     ProfileComponent,
-    
-    AddProductComponent
+    SelectComponent,
+    ProductComponent,
   ],
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),

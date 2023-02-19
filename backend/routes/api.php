@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Resources\ProductResource;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('Products/category/{category}', [ProductController::class, 'getProduc
 // Get all categories
 Route::get('/Products/categories', [ProductController::class, 'getAllCategories']);
 
-// New methods I'm trying out
+// Products API routes
 
 Route::put('/Product/{id}',[ProductController::class,'update']);
 
@@ -48,15 +49,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::post('/register',[UserController::class,'register']);
 
-/*
-Route::controller(AuthController::class)->group(function () {
-    Route::post('login', 'login');
-    Route::post('register', 'register');
-    Route::post('logout', 'logout');
-    Route::post('refresh', 'refresh');
-
-});
-*/
 
 Route::middleware('api')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
@@ -68,6 +60,29 @@ Route::middleware('api')->group(function () {
     Route::post('reg', [LogController::class, 'register']);
 });
 
+
+// Freesytles
+
+Route::get('/totalUsers',[DashboardController::class,'getTotalUsers']);
+
+Route::get('/totalProducts',[DashboardController::class,'getTotalProducts']);
+
+Route::get('/totalRevenue',[DashboardController::class,'getTotalRevenue']);
+
+// Route::get('/totalOrders',[DashboardController::class,'getTotalOrders']);
+
+
+/*
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+
+});
+*/
+
+
 /*
 Route::controller(TodoController::class)->group(function () {
     Route::get('todos', 'index');
@@ -77,9 +92,3 @@ Route::controller(TodoController::class)->group(function () {
     Route::delete('todo/{id}', 'destroy');
 }); 
 */
-
-// New attempts 
-
-
-
-

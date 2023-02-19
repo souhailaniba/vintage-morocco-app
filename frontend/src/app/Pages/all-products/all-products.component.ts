@@ -4,13 +4,14 @@ import { ProductsService } from 'src/app/service/products.service';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  templateUrl: './all-products.component.html',
+  styleUrls: ['./all-products.component.css']
 })
 export class ProductsComponent  implements OnInit{
 
   products:any[]=[]
   categories:any[]=[]
+  cartProducts:any[]=[]
   constructor(private service: ProductsService){}
   ngOnInit():void{
     this.getProducts()
@@ -45,4 +46,25 @@ export class ProductsComponent  implements OnInit{
     this.products=res
     })
   }
+
+
+  addToCart(event:any){
+    
+    if("cart" in localStorage){
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+      let exist = this.cartProducts.find(item => item.item.id == event.item.id)
+      if(exist){
+        alert("product is already in your cart")
+      }else{
+        this.cartProducts.push(event)
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    
+      }
+      }else{
+      this.cartProducts.push(event)
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+  
+    }
+   }
+ 
 }
