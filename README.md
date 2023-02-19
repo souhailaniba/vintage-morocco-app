@@ -8,7 +8,7 @@ Duplicate `.env.example` file, rename it to `.env`.
 
 Create an Database and customize MYSQL infos in the `.env` file (line 11).
 
-Run `Generate secret key` to generate a secret key.
+Run `php artisan key:generate` to generate a secret key.
 
 Run `php artisan migrate` to migrate all the needed tables to your db.
 
