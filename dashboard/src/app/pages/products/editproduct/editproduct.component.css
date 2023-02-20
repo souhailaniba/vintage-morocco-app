@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 *{
-    background: none;
-}
+    background: #ECE6C2;
+    margin: 0 auto;
+  }
 
 a{
     text-decoration: none;
@@ -17,9 +18,8 @@ a{
 .register{
     font-family: "Alfa Slab One";
     color: #373535;
-    background-color: #ECE6C2;
-    
-
+   
+    margin-left: 250px;
 justify-content: center;
 align-items: center;
 padding:0px  0px ;
@@ -50,7 +50,7 @@ padding-bottom: 30px;
     height: 45px;
     color: #373535;
     border-radius: 10px;
-    background-color: #ECE6C2;
+
 }
 label{
     padding-top: 10px;
@@ -103,7 +103,9 @@ background-color: #CD6C4B;
     display: flex;
     justify-content: center;
   }
-  
+  .buttons p{
+    background-color:#D2A24D;
+  }
 
 .register-field, .register-form label, .buttons{
     background-color: #D2A24D;

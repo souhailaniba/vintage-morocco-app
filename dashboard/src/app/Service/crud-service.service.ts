@@ -11,24 +11,48 @@ export class CrudServiceService {
   //add the api link here
   REST_API:string='http://localhost:8000/api/Products';
   REST_API2:string='http://localhost:8000/api/Product';
+  REST_API3:string='http://localhost:8000/api/register';
+  REST_API4:string='http://localhost:8000/api/register';
+
+
 
   httpheaders = new HttpHeaders().set('Content-Type','application/json');
   constructor(private httpclient:HttpClient) { }
     
-    AddProduct(data:product):Observable<any>{
-      let API_URL=this.REST_API;
+  AddProduct(data: any): Observable<any> {
+    const formData = new FormData();
+    formData.append('title', data.title);
+    formData.append('price', data.price);
+    formData.append('category', data.category);
+    formData.append('image', data.imageFile);
+    formData.append('description', data.description);
+  
+    let API_URL = this.REST_API;
+    return this.httpclient.post(API_URL, formData).pipe(catchError(this.handleError));
+  }
+
+    AddUser(data:product):Observable<any>{
+      let API_URL=this.REST_API3;
       console.log(data);
       return this.httpclient.post(API_URL,data).pipe(catchError(this.handleError))
     }
 
-
     GetProducts(){
       return this.httpclient.get(this.REST_API);
     }
-
+    GetUsers(){
+      return this.httpclient.get(this.REST_API3);
+    }
 
     getProduct(id:any):Observable<any>{
       let API_URL=`${this.REST_API2}/${id}`;
+      return this.httpclient.get(API_URL,{headers:this.httpheaders}).pipe(
+        map((res:any)=>{
+          return res || {}
+        }),catchError(this.handleError))
+    }
+    getUser(id:any):Observable<any>{
+      let API_URL=`${this.REST_API4}/${id}`;
       return this.httpclient.get(API_URL,{headers:this.httpheaders}).pipe(
         map((res:any)=>{
           return res || {}
@@ -43,6 +67,14 @@ export class CrudServiceService {
           return res || {}
         }),catchError(this.handleError))
     }
+    updateUser(id:any,data:product):Observable<any>{
+      let API_URL=`${this.REST_API4}/${id}`;
+      return this.httpclient.put(API_URL,data,{headers:this.httpheaders}).pipe(
+        map((res:any)=>{
+          return res || {}
+        }),catchError(this.handleError))
+    }
+
 
 
     deleteProduct(id:any):Observable<any>{
@@ -52,6 +84,14 @@ export class CrudServiceService {
           return res || {}
         }),catchError(this.handleError))
     }
+    deleteUser(id:any):Observable<any>{
+      let API_URL=`${this.REST_API4}/${id}`;
+      return this.httpclient.delete(API_URL,{headers:this.httpheaders}).pipe(
+        map((res:any)=>{
+          return res || {}
+        }),catchError(this.handleError))
+    }
+    
     
 
     handleError(error:HttpErrorResponse){

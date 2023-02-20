@@ -1,41 +1,43 @@
-<div class="container">
-  <div class="">
-    <h1 class="text-center bold">Products List !</h1>
-    
-<table class=" table table-bordered table-primary table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Category</th>
-      <th scope="col">Image</th>
-      <th scope="col">Description</th>
-      <th scope="col">Action</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let Product of products;let i =index ">
-      <th scope="row">{{Product.id}}</th>
-      <td>{{Product.title}}</td>
-      <td>{{Product.price}}</td>
-      <td>{{Product.category}}</td>
-      <td><img src="{{Product.image}}" alt="" height="100px"></td>
-      <td>{{Product.description}}</td>
-      <td>
-        
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <button type="button" class="btn btn-success" routerLink="/editproduct/{{Product.id}}">Edit</button>
-          <button type="button" class="btn btn-danger" (click)="delete(Product.id,i)">Delete</button>
-         
-        </div>
-      </td>
-    </tr>
-   
-  </tbody>
-</table>
+<body>
+  <app-layout></app-layout>
+  <div class="container">
+    <div class="">
+      <h1 class="text-center bold">Products List !</h1>
+      
+  <table class=" table table-bordered table-primary table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Product of products;let i =index ">
+        <th scope="row">{{Product.id}}</th>
+        <td>{{Product.title}}</td>
+        <td>{{Product.price}}</td>
+        <td>{{Product.category}}</td>
+        <td><img src="{{Product.image}}" alt="" height="100px"></td>
+        <td>{{Product.description}}</td>
+        <td>
+          
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-success" routerLink="/editproduct/{{Product.id}}">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="delete(Product.id,i)">Delete</button>
+           
+          </div>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+    </div>
   </div>
-</div>
-
+  </body>
 

@@ -1,6 +1,8 @@
 import { Component, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DashboardService } from 'src/app/dashboard.service';
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -61,5 +63,19 @@ export class DashboardComponent implements OnInit {
     })
   }
   */
+}
+@Injectable({
+  providedIn: 'root'
+})
 
+export class AuthGuard implements CanActivate {
+  constructor(private router: Router) {}
+
+  canActivate(): boolean {
+    const isAuthenticated = true; // Check if user is authenticated
+    if (!isAuthenticated) {
+      this.router.navigate(['/login']);
+    }
+    return isAuthenticated;
+  }
 }

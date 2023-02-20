@@ -1,0 +1,105 @@
+/*Topnav css*/
+.topnav{width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+    overflow:hidden;
+    background-color: #ECE6C2;
+    border-bottom: 1px solid gray;
+    }
+    .topnav .title {
+        color: #373535;
+        float: left;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 30px;
+        padding: 10px 10px;
+    
+      }
+      
+      .topnav .logo {
+        width: 100px;
+        height: 100px;
+        padding-bottom: 5px;
+        margin-left: 40px;
+        
+      }
+    .menu{
+        float: right;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 30px;
+        cursor: pointer;
+        color:#373535;
+        display: none;
+    }
+    /*leftsidebar*/
+    .sidenav{
+        position: fixed;
+        top:100px;
+        overflow: auto;
+        height: 100%;
+        border-right: 1px solid gray;
+        padding: 30px 5px;
+        margin: 0;
+        width:200px;
+    }
+    .sidenav a{
+        text-decoration: none;
+        padding: 20px 20px ;
+        color: #373535;
+        text-align: left;
+        display: block;
+    }
+    
+    .sidenav i{
+        padding-right: 10px;
+        color: #373535;
+    }
+    .sidenav .icon {
+        float:right;
+         
+    
+    }
+    .dropdow-container{
+        padding-left: 10px;
+        overflow-y: hidden;
+        max-height: 0px;
+        transition: all .15s ease;
+    }
+    .dropdow-container.show{
+        max-height: 1000px;
+        transition:all .15s ease;
+    }
+    ul>li>a.active{
+        color:#373535;
+    }
+    .main-content {
+        margin-left:200px;
+        margin-top: 100px;
+        padding: 10px 18px;
+        transition: margin-left .5s;
+    }
+    @media screen and (max-width:600px) {
+        .menu{
+            display: block;
+        }
+        .sidenav{
+            display: none;
+            width: 180px;
+            position: relative;
+            float: right;
+            border-left: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        .sidenav a{
+            padding: 20px 10px;
+        }
+        .main-content
+        {
+            margin-left: 0px;
+        }
+    }

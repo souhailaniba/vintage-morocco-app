@@ -1,41 +1,43 @@
-<div class="register">
-  <h1 class="title"> 
-    Edit the Product #{{ this.getId }} !
-  </h1>
-    <form class="register-form" [formGroup]="updateform" (ngSubmit)="OnUpdate()">
-        <div>
-          <div class="register-field">
-              <label for="name">Name :</label>
-              <input type="text"  class="form-control" id="title" formControlName="title">
-            </div>
-            
+<body><app-layout></app-layout>
+  <div class="register">
+    <h1 class="title"> 
+      Edit the Product #{{ this.getId }} !
+    </h1>
+      <form class="register-form" [formGroup]="updateform" (ngSubmit)="OnUpdate()">
+          <div>
             <div class="register-field">
-                <label for="price">Price :</label>
-                <input type="text" class="form-control" id="price" formControlName="price">
-            </div>
-
-            <div class="register-field">
-                <label for="category">Category :</label>
-                <input type="text" class="form-control" id="category" formControlName="category">
-            </div>
-
-            <div class="register-field">
-              <label for="description">Description :</label>
-              <textarea type="text" class="form-control" id="description" formControlName="description" ></textarea>
-            </div>
-        
-             <div class="register-field">
-              <label for="image">Image :</label>
-              <input type="text" class="form-control" id="image" formControlName="image">
-            </div>
-
-            <div class="buttons">
-              <p><button type="submit" class="submit-button">Update Product</button></p>
-            </div>
-
-            
-        </div>
-      </form>
+                <label for="name">Name :</label>
+                <input type="text"  class="form-control" id="title" formControlName="title">
+              </div>
+              
+              <div class="register-field">
+                  <label for="price">Price :</label>
+                  <input type="text" class="form-control" id="price" formControlName="price">
+              </div>
   
-  </div>
+              <div class="register-field">
+                  <label for="category">Category :</label>
+                  <input type="text" class="form-control" id="category" formControlName="category">
+              </div>
   
+              <div class="register-field">
+                <label for="description">Description :</label>
+                <textarea type="text" class="form-control" id="description" formControlName="description" ></textarea>
+              </div>
+          
+               <div class="register-field">
+                <label for="image">Image :</label>
+                <input type="text" class="form-control" id="image" formControlName="image">
+              </div>
+  
+              <div class="buttons">
+                <p><button type="submit" class="submit-button">Update Product</button></p>
+              </div>
+  
+              
+          </div>
+        </form>
+    
+    </div>
+    
+  </body>
