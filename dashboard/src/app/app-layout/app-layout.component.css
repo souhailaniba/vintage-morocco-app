@@ -46,6 +46,7 @@
         padding: 30px 5px;
         margin: 0;
         width:200px;
+        z-index:1;
     }
     .sidenav a{
         text-decoration: none;

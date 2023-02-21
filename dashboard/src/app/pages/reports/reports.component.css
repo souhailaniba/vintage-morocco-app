@@ -1,4 +1,31 @@
 *{
     background: #ECE6C2;
     margin: 0 auto;
+    
+  }
+  .container{
+    margin: 0 auto;
+    margin-left: 230px;
+    margin-top: 0px;
+    width: auto;
+    background-color: #ECE6C2;
+    border: 4px solid #373535;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+  }
+  .container h1{
+    justify-content: center;
+   text-align: center;
+  }
+
+  .list-group-item {
+    width: 100%;
+    background-color: #ECE6C2;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #373535;
+  }
+  .list-group-item-text{
+    color:#CD6C4B ;
   }

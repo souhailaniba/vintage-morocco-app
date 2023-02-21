@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DashboardService } from 'src/app/dashboard.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import {Chart,registerables  }from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,15 +12,72 @@ import { CanActivate, Router } from '@angular/router';
 })
 
 export class DashboardComponent implements OnInit {
-  
+  Chart:any;
+  Chart2:any;
+  CatsData = {
+    labels: ["cat1","cat2","cat3"],
+    datasets: [{
+      data: [1200, 1700, 800],
+      backgroundColor: [
+        "#73BCA8",
+        "#D2A24D",
+        "#CD6C4B"
+      ],borderColor:[
+        "#73BCA8",
+        "#D2A24D",
+        "#CD6C4B"
+      ]
+    }]
+  };
+  UserData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      { data: [12, 15, 18, 14, 11, 19, 12], label: 'Users', borderColor: '#73BCA8', backgroundColor: '#73BCA8' },
+      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Products', borderColor: '#D2A24D', backgroundColor: '#D2A24D' },
+    ]
+  };
+  ChartOptions={
+    responsive: false,
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
+    plugins: {
+      legend: {
+          labels: {
+              // This more specific font property overrides the global property
+              font: {
+                  size: 18,
+                  family: "Alfa Slab One",
+              }
+              
+          }
+      }
+  }
+  };
   totalUsers = 0;
   totalItems = 0;
   totalOrders = 0;
   totalRevenue = 0;
 
-  constructor(private service: DashboardService) {}
+  constructor(private service: DashboardService) { }
 
   ngOnInit():void{
+    const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+    const canvas2 = document.getElementById('theChart') as HTMLCanvasElement;
+    Chart.register(...registerables);
+   this.Chart= new Chart( canvas,{
+      type: 'line',
+        data:this.UserData,
+       
+        options: this.ChartOptions,
+      });
+      this.Chart2= new Chart( canvas2,{
+        type: 'polarArea',
+          data:this.CatsData,
+          options: this.ChartOptions               
+        });
     this.getTotalUsers()
     this.getTotalProducts()
     this.getTotalRevenue()
@@ -78,4 +136,6 @@ export class AuthGuard implements CanActivate {
     }
     return isAuthenticated;
   }
+
+   
 }

@@ -7,6 +7,8 @@ import { ReportsComponent } from './pages/reports/reports.component';
 import { AddproductComponent } from './pages/products/addproduct/addproduct.component';
 import { EditproductComponent } from './pages/products/editproduct/editproduct.component';
 import { LoginComponent } from './pages/login/login.component';
+//import { LineChartComponent } from './line-chart/line-chart.component';
+
 
 const routes: Routes = [
   {path:'',component:LoginComponent},

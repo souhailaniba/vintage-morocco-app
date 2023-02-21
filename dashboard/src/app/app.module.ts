@@ -12,6 +12,7 @@ import { AddproductComponent } from './pages/products/addproduct/addproduct.comp
 import { EditproductComponent } from './pages/products/editproduct/editproduct.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UsersComponent } from './pages/users/users.component';
+import { NgChartsModule } from 'ng2-charts';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
