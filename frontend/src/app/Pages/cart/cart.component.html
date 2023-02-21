@@ -1,0 +1,69 @@
+<div class="MYcontainer">
+    <div class="">
+      <h1 class="text-center bold">List of products in your cart!!</h1>
+      <br/>
+
+      <h4 class="text-center bold"> You have {{cartProducts.length}} items in your cart:</h4>
+      <span class="clear" (click)="clearCart()">Clear shopping cart</span>
+  <table class=" table table-bordered table-primary table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Total</th>
+        
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartProducts; let index = index">
+        <th scope="row">{{item.item.id}}</th>
+        <td>{{item.item.title}}</td>
+        <td>{{item.item.price * item.quantity}}</td>
+       
+        <td><img src="{{item.item.image}}" alt="" height="100px"></td>
+        <td>{{item.item.description}}</td>
+        
+        <td>
+          <div class="quantity">
+              <button class="btn btn-dark" (click)="minus(index)">-</button>
+              <input class="form-control" type="number" (change)="detectChange()"  [(ngModel)]="item.quantity" min="1">
+              <button class="btn btn-dark" (click)="plus(index)">+</button>
+          </div>
+      </td>
+        <td>
+          
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+           
+            <button type="button" class="btn btn-danger" style="width:100px !important;" (click)="deleteProduct(index)">Delete</button>
+           
+          </div>
+        </td>
+      </tr>
+     
+    </tbody>
+    <tfoot>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Total : {{cartTotal}} DHS</th>
+          
+          <th >
+              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <button type="button" class="btn btn-success order"  (click)="addCart()">Order Now</button>
+                 
+                </div>
+              </th>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="alert alert-success" role="alert" *ngIf="success" >Your order was sent successfully!!</div>
+    </div>
+  </div>

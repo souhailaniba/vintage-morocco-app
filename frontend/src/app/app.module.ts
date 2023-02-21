@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule , Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './Pages/all-products/all-products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,6 +24,7 @@ import { AfterLoginService } from './service/after-login.service';
 import { ProductsService } from './service/products.service';
 import { SelectComponent } from './components/select/select.component';
 import { ProductComponent } from './Pages/product/product.component';
+import { CartComponent } from './Pages/cart/cart.component';
 
 const appRoutes: Routes = [
   {path: 'Products' , component:ProductsComponent},
@@ -31,8 +34,9 @@ const appRoutes: Routes = [
   {path : 'UpdateUser' , component:UpdateuserComponent},
   {path : 'About', component: AboutComponent},
   {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
+  {path : 'Cart', component: CartComponent, canActivate: [AfterLoginService]},
+  {path : 'Products/category/:categoryName', component: ProductsComponent }
  
-  {path : 'Products/category/:categoryName', component: ProductsComponent },
 
 ];
 
@@ -49,6 +53,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     SelectComponent,
     ProductComponent,
+    CartComponent,
+
   ],
 
   imports: [
@@ -56,6 +62,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule
+    
   ],
   exports: [RouterModule],
   providers: [JarwisService , AuthService, TokenService, ProductsService],

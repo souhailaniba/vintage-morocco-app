@@ -6,6 +6,6 @@
     <p><button class="bigbutton" type="submit" *ngIf="!addButton" (click)="addButton=true">Add to Cart</button></p>
     <div class="addqnt" *ngIf="addButton">
         <input type="number" class="form-control" [(ngModel)]="amount">
-        <button  class="smallbutton" type="submit" (click)="add()" >Add</button>
+        <button  class="smallbutton" type="submit" (click)="add();addButton=false" >Add</button>
     </div>
 </div>
