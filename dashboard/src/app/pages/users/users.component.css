@@ -4,13 +4,14 @@
   }
   
   .container {
-      margin-left: 230px;
+      margin-left: 220px;
       margin-top: 0px;
       width: auto;
       background-color: #ECE6C2;
       border: 4px solid #373535;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 20px;
+      padding: 50px;
     }
     
     .bold {

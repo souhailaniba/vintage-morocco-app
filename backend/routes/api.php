@@ -9,6 +9,7 @@ use App\Http\Resources\ProductResource;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,18 @@ Route::middleware('api')->group(function () {
 });
 
 
+// Users routes
+
+Route::get('/Users',[UsersController::class,'index']);
+
+Route::get('/User/{id}',[UsersController::class,'show']);
+
+Route::put('/User/{id}',[UsersController::class,'update']);
+
+Route::delete('/User/{id}',[UsersController::class,'destroy']);
+
+Route::post('/Users',[UsersController::class,'store']);
+
 // Freesytles
 
 Route::get('/totalUsers',[DashboardController::class,'getTotalUsers']);
@@ -92,3 +105,5 @@ Route::controller(TodoController::class)->group(function () {
     Route::delete('todo/{id}', 'destroy');
 }); 
 */
+
+

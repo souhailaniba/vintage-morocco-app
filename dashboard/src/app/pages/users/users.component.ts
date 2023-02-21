@@ -18,7 +18,7 @@ export class UsersComponent {
   }
   delete(id:any,i:any){
     console.log(id);
-    this.crudService.deleteProduct(id).subscribe(res=>{
+    this.crudService.deleteUser(id).subscribe(res=>{
       this.users.splice(i,1);
     })
   }

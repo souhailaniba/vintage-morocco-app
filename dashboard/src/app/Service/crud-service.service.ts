@@ -11,8 +11,8 @@ export class CrudServiceService {
   //add the api link here
   REST_API:string='http://localhost:8000/api/Products';
   REST_API2:string='http://localhost:8000/api/Product';
-  REST_API3:string='http://localhost:8000/api/register';
-  REST_API4:string='http://localhost:8000/api/register';
+  REST_API3:string='http://localhost:8000/api/Users';
+  REST_API4:string='http://localhost:8000/api/User';
 
 
 
