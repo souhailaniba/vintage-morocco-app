@@ -1,0 +1,32 @@
+*{
+  background-color: #ECE6C2;
+}
+.profile{
+  margin: 0 !important;
+  padding: 100px;
+}
+.all{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+.welcome{
+  margin: 0  !important;
+  
+  
+}
+.information{
+  font-size: larger;
+  /*padding: 50px 0 ;*/
+}
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 2px solid #373535 ;
+}
+.info{
+  margin: 20px 0;
+}

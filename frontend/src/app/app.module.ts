@@ -31,11 +31,11 @@ const appRoutes: Routes = [
   {path: 'Home' , component:HomeComponent},
   {path: 'Register' , component:RegisterComponent, canActivate: [BeforeLoginService]},
   {path: 'Login' , component:LoginComponent, canActivate: [BeforeLoginService]},
-  {path : 'UpdateUser' , component:UpdateuserComponent},
-  {path : 'About', component: AboutComponent},
-  {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
-  {path : 'Cart', component: CartComponent, canActivate: [AfterLoginService]},
-  {path : 'Products/category/:categoryName', component: ProductsComponent }
+  {path: 'UpdateUser' , component:UpdateuserComponent},
+  {path: 'About', component: AboutComponent},
+  {path: 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
+  {path: 'Cart', component: CartComponent, canActivate: [AfterLoginService]},
+  {path: 'Products/category/:categoryName', component: ProductsComponent }
  
 
 ];

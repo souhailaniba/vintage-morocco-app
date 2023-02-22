@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/service/token.service';
+import { CartsService } from 'src/app/service/carts.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   public loggedIn :  boolean;
 
 constructor( private Auth: AuthService , private router: Router,
-  private Token: TokenService){ 
+  private Token: TokenService , private cart : CartsService){ 
 }
 
 ngOnInit() {
@@ -23,6 +24,7 @@ logout(event: MouseEvent) {
   this.Token.remove();
   this.Auth.changeAuthStatus(false);
   this.router.navigateByUrl('/Login');
+  this.cart.remove();
 }
 
 

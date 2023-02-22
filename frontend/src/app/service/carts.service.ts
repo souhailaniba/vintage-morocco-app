@@ -10,4 +10,7 @@ export class CartsService {
   createNewCart(model:any){
     return this.http.get(this.url+'/api/Carts' , model )
   }
+  remove(){
+    localStorage.removeItem('cart');
+  }
 }
