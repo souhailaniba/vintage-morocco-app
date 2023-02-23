@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-
-
-
-
-
-
-
+import { catchError,map } from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import { HttpClient,HttpHeaders,HttpErrorResponse} from '@angular/common/http';
+import {user} from './User';
 
 
 @Injectable({
@@ -14,14 +10,62 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class ProfileService {
 
-  constructor(private http:HttpClient) { }
   url:string = "http://localhost:8000" ;
+  url2:string='http://localhost:8000/api/Users';
+  url3:string='http://localhost:8000/api/User';
 
-getAllUsers(){
-  //keyword:string
-  return this.http.get (this.url+'/api/Products/Users');
-}
+  httpheaders = new HttpHeaders().set('Content-Type','application/json');
+  
+
+  constructor(private httpclient:HttpClient) { }
+  
+
+  getAllUsers(){
+    //keyword:string
+    return this.httpclient.get (this.url+'/api/Users');
+  }
+
+  GetUsers(){
+    return this.httpclient.get(this.url2);
+  }
+
+  getUser(id:any):Observable<any>{
+    let API_URL=`${this.url3}/${id}`;
+    return this.httpclient.get(API_URL,{headers:this.httpheaders}).pipe(
+      map((res:any)=>{
+        return res || {}
+      }),catchError(this.handleError))
+  }
 
 
- 
+  updateUser(id:any,data:user):Observable<any>{
+    let API_URL=`${this.url3}/${id}`;
+    return this.httpclient.put(API_URL,data,{headers:this.httpheaders}).pipe(
+      map((res:any)=>{
+        return res || {}
+      }),catchError(this.handleError))
+  }
+
+
+  deleteUser(id:any):Observable<any>{
+    let API_URL=`${this.url3}/${id}`;
+    return this.httpclient.delete(API_URL,{headers:this.httpheaders}).pipe(
+      map((res:any)=>{
+        return res || {}
+      }),catchError(this.handleError))
+  }
+  
+
+  handleError(error:HttpErrorResponse){
+    let errorMessage ='';
+    if(error.error instanceof ErrorEvent){
+      errorMessage=error.error.message;
+    }else{
+      errorMessage=`Error Code:${error.status}\n Message :${error.message}`
+    }
+    console.log(errorMessage);
+
+    return  throwError(errorMessage);
+  }
+
 }

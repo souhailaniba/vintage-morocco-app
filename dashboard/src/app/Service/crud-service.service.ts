@@ -24,7 +24,7 @@ export class CrudServiceService {
     formData.append('title', data.title);
     formData.append('price', data.price);
     formData.append('category', data.category);
-    formData.append('image', data.imageFile);
+    formData.append('image', data.image);
     formData.append('description', data.description);
   
     let API_URL = this.REST_API;

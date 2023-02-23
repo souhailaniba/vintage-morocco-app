@@ -26,6 +26,7 @@ padding:0px  0px ;
 
 }
 .register-form{
+    background: none;
     justify-content: space-around;
    margin: auto;
     width: 75%;

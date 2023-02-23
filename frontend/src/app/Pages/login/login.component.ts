@@ -38,8 +38,11 @@ constructor(
 handleResponse(data){
   this.Token.handle(data.access_token);
   this.Auth.changeAuthStatus(true);
-  this.router.navigateByUrl('/Profile');
-  //this.router.navigateByUrl('/Products');
+  const userId = data.user.id;
+  localStorage.setItem('userId', userId); // set userId in the local storage
+  console.log(userId);
+  this.router.navigateByUrl('/Profile/'+userId);
+  //this.router.navigateByUrl('/Profile');
 }
 
 handleError(error) {

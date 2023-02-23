@@ -20,7 +20,7 @@
                 <a  href="#" (click)="logout($event)" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Logout</a>
               </li>
               <li >
-                <a   routerLink="/Profile" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Profile</a>
+                <a   routerLink="/Profile/{{userId}}" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Profile</a>
               </li>
               <li >
                 <a   routerLink="/Cart" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="loggedIn">Cart</a>

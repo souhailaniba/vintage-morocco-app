@@ -26,37 +26,18 @@
               <label for="description">Description :</label>
               <textarea type="text" placeholder="Enter the product's description" class="form-control" id="description" formControlName="description" required></textarea>
             </div>
-        
-             <div class="register-field">
-              <label for="image">Image :</label>
-              <input type="hidden" class="form-control" id="image-url" formControlName="image" >
-              <input type="file" placeholder="upload the product's image " class="form-control" id="image-file"  formControlName="image" accept="image/*" required>
-            </div>
+
+            <div class="register-field">
+              <label for="category">Image :</label>
+              <input type="text" placeholder="Enter the product's image URL" class="form-control" id="image" formControlName="image" required>
+          </div>
             
             <div class="buttons">
               <p><button type="submit" class="submit-button" >Add Product</button></p>
             </div>
             
       </form>
-      <script>
-        const fileInput = document.getElementById('image-file');
-const imageElement = document.getElementById('image-url');
-
-fileInput.addEventListener('change', () => {
-  const file = fileInput.files[0];
-  const reader = new FileReader();
-
-  reader.addEventListener('load', () => {
-    imageElement.src = reader.result;
-  });
-
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-});
-
-
-      </script>
+      
 </div>
   
 

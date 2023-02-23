@@ -35,7 +35,8 @@ const appRoutes: Routes = [
   {path: 'About', component: AboutComponent},
   {path: 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
   {path: 'Cart', component: CartComponent, canActivate: [AfterLoginService]},
-  {path: 'Products/category/:categoryName', component: ProductsComponent }
+  {path: 'Products/category/:categoryName', component: ProductsComponent },
+  { path: 'Profile/:userId', component: ProfileComponent },
  
 
 ];

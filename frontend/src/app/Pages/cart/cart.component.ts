@@ -58,11 +58,12 @@ constructor(private service: CartsService){
 
   }
   addCart(){
+    let userId = localStorage.getItem('userId');
     let products= this.cartProducts.map(item =>{
       return {productId: item.item.id,quantity:item.quantiti}
     })
     let Model={
-      userId : 5,
+      userId : userId,
       date : new Date(),
       products:[]
     }

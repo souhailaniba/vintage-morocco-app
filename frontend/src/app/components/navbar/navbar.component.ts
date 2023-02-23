@@ -11,6 +11,7 @@ import { CartsService } from 'src/app/service/carts.service';
 })
 export class NavbarComponent implements OnInit {
   public loggedIn :  boolean;
+  public userId : any;
 
 constructor( private Auth: AuthService , private router: Router,
   private Token: TokenService , private cart : CartsService){ 
@@ -18,6 +19,7 @@ constructor( private Auth: AuthService , private router: Router,
 
 ngOnInit() {
   this.Auth.authStatus.subscribe(value => this.loggedIn = value);
+  this.userId = localStorage.getItem('userId');
 }
 logout(event: MouseEvent) {
   event.preventDefault();
