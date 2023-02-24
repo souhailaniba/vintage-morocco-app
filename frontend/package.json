@@ -20,7 +20,10 @@
     "@angular/router": "^15.1.0",
     "@auth0/angular-jwt": "^5.1.2",
     "cors": "^2.8.5",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.28",
     "jwt-decode": "^3.1.2",
+    "pdfmake": "^0.2.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

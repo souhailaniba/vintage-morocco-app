@@ -74,6 +74,10 @@ Route::delete('/User/{id}',[UsersController::class,'destroy']);
 
 Route::post('/Users',[UsersController::class,'store']);
 
+// Cart routes
+
+
+
 // Freesytles
 
 Route::get('/totalUsers',[DashboardController::class,'getTotalUsers']);
