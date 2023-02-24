@@ -1,32 +1,240 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.profile {
   background-color: #ECE6C2;
-}
-.profile{
-  margin: 0 !important;
-  padding: 100px;
-}
-.all{
+  font-family: "Alfa Slab One";
+  }
+  
+  .container {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
-  margin: auto;
-  padding: 20px;
-}
-.welcome{
-  margin: 0  !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  }
   
+  .title {
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: #373535;
+  }
   
-}
-.information{
-  font-size: larger;
-  /*padding: 50px 0 ;*/
-}
-img{
-  width: 200px;
-  height: 200px;
+  .info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem;
   border-radius: 20px;
-  border: 2px solid #373535 ;
-}
-.info{
-  margin: 20px 0;
-}
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70%;
+  }
+  
+  .profile-picture {
+    margin: 0px;
+  }
+  
+  .profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  }
+  
+  .info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  }
+
+  
+  .info-section h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #373535;
+  }
+  
+  .info-section p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #373535;
+  }
+
+  .info-update-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 50px;
+
+  }
+
+  .update-section, .update-section-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  }
+  
+  .update-section h3, .update-section-2 h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #373535;
+  }
+  
+  .update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 195%;
+  padding: 20px;
+
+  border: 2px solid #373535;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  }
+  
+  .update-form label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #373535;
+  }
+  
+  .update-form input {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+  width: 75%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .update-form button {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #5dae61;
+  color: #fff;
+  width: 25%;
+  }
+  
+  .update-form button:hover {
+    cursor: pointer;
+    background-color: #4A8F44;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 50%;
+  }
+  
+  .update-button, .disable-button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 48%;
+    text-align: center;
+  }
+  
+  .update-button {
+    background-color: #5dae61;
+    color: #fff;
+  }
+  
+  .update-button:hover {
+    cursor: pointer;
+    background-color: #4A8F44;
+  }
+
+  .disable-button {
+    background-color: #E4584C;
+    color: #fff;
+  }
+  
+  .disable-button:hover{
+    cursor: pointer;
+    background-color: #B73327;
+  }
+  
+  .update-section-2 button {
+    background-color: #373535; 
+    width: 50%;
+    color: #fff;
+  }
+  
+  .update-section-2 button:hover {
+    cursor: pointer;
+    background-color: #5f5a5a; 
+  }
+
+  .review-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+  }
+  
+  .review-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #373535;
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    border: 2px solid #373535;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  
+  .review-form label {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #373535;
+  }
+  
+  .review-form textarea {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .review-form button {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #5dae61;
+    color: #fff;
+    width: 25%;
+  }
+  
+  .review-form button:hover {
+    cursor: pointer;
+    background-color: #4A8F44;
+  }
+    
