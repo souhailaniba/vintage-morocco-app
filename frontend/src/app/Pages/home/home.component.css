@@ -111,9 +111,11 @@ border-radius: 20px;
 .hdra{
     color: #373535;
     font-family:"Alfa Slab One";
-    font-weight: 100;
-    font-size: small;
+    font-weight: 120;
+    font-size: 15px;
+    text-align: justify;
     background:none;
+    margin-top: 20px;
 }
 
 .article2{

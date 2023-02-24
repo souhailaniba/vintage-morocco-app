@@ -110,8 +110,10 @@ border-radius: 20px;
     color: #373535;
     font-family:"Alfa Slab One";
     font-weight: 100;
-    font-size: small;
+    font-size: 15px;
+    text-align: justify;
     background:none;
+    margin-top: 20px;
 }
 
 .article2{
@@ -150,6 +152,10 @@ padding: 2%;
     display: block;
     
     font-size: 18px;
+}
+
+.smalllink{
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 800px) {
