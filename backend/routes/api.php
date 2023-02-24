@@ -10,6 +10,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ReviewsController;
+use App\Models\Review;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,15 +70,25 @@ Route::get('/Users',[UsersController::class,'index']);
 
 Route::get('/User/{id}',[UsersController::class,'show']);
 
+Route::get('/User/{id}/Name',[UsersController::class,'showName']);
+
 Route::put('/User/{id}',[UsersController::class,'update']);
 
 Route::delete('/User/{id}',[UsersController::class,'destroy']);
 
 Route::post('/Users',[UsersController::class,'store']);
 
-// Cart routes
+// Reviews routes
 
+Route::get('/Reviews',[ReviewsController::class,'index']);
 
+Route::get('/Review/{id}',[ReviewsController::class,'show']);
+
+Route::put('/Review/{id}',[ReviewsController::class,'update']);
+
+Route::delete('/Review/{id}',[ReviewsController::class,'destroy']);
+
+Route::post('/Reviews',[ReviewsController::class,'store']);
 
 // Freesytles
 

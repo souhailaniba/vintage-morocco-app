@@ -1,31 +1,115 @@
-*{
-    background: #ECE6C2;
-    margin: 0 auto;
-    
-  }
-  .container{
-    margin: 0 auto;
-    margin-left: 230px;
-    margin-top: 0px;
-    width: auto;
-    background-color: #ECE6C2;
-    border: 4px solid #373535;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    padding: 30px;
-  }
-  .container h1{
-    justify-content: center;
-   text-align: center;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
-  .list-group-item {
-    width: 100%;
-    background-color: #ECE6C2;
-    border: none;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #373535;
-  }
-  .list-group-item-text{
-    color:#CD6C4B ;
-  }
+* {
+  background: none;
+}
+
+body {
+  background-color: #ECE6C2;
+  font-family: "Alfa Slab One";
+}
+
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #373535;
+}
+
+.container {
+  margin-left: 230px;
+  padding: 1%;
+  width: auto;
+  background: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+}
+
+.list-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1%;
+  width: 45%;
+  border: 2px solid #373535;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  flex-basis: calc(90% - 1% - 10px);
+  max-width: calc(90% - 1% - 10px);
+  
+}
+
+.list-group .delete-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #373535;
+  font-size: 24px;
+  color: red;
+}
+
+.list-group:hover .delete-icon {
+  display: block;
+}
+
+.list-group .delete-icon:hover {
+  color: darkred;
+}
+
+.list-group:last-child {
+  margin-right: 0;
+}
+
+
+.list-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+  text-align: center;
+  border: none;
+}
+
+.img-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.list-group-item-owner {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #373535;
+}
+
+.list-group-item-date {
+  font-size: 1.1rem;
+  font-weight: lighter;
+  margin-bottom: 0.5rem;
+  color: #7e7e7e;
+}
+
+.list-group-item-text {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #CD6C4B;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.delete-icon {
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  color: #CD6C4B;
+}
+

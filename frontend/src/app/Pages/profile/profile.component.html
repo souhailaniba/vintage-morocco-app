@@ -8,7 +8,7 @@
   
         <div class="profile-picture">
           <!--<img src="../../assets/Images/Gradient.jpg" alt="" class="image">-->
-          <img src="http://cdn.onlinewebfonts.com/svg/img_568656.png" alt="" class="image">
+          <img src="../../../assets/Images/user_icon.png" alt="" class="image">
         </div>
   
         <div class="info-section">
@@ -83,9 +83,9 @@
 
         <div class="review-section">
             <h3>Write a Review about us !</h3>
-            <form class="review-form">
-              <label for="review-text">Let us know what you think:</label>
-              <textarea id="review-text" name="review-text" rows="4"></textarea>
+            <form class="review-form" [formGroup]="reviewForm" (ngSubmit)="sendReview()">
+              <label for="comment">Let us know what you think:</label>
+              <textarea id="comment" name="comment" rows="5" formControlName="comment"></textarea>
               <button type="submit">Send &#x27A4;</button>
             </form>
           </div>

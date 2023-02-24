@@ -68,4 +68,9 @@ export class ProfileService {
     return  throwError(errorMessage);
   }
 
+  sendReview(user_id:any, comment: string, owner: string) {
+    const review = { user_id:user_id ,comment: comment, owner: owner};
+    return this.httpclient.post<any>(this.url+'/api/Reviews', review);
+  }
+
 }
