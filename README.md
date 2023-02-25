@@ -30,6 +30,6 @@ Run `npm install` to install all the dependencies needed.
 
 Run `ng serve` for an admin  dev server.
 
-Then Navigate to `http://localhost:42001/` or whichever url VSCode did chose for you.
+Then Navigate to `http://localhost:42001/` or whichever url your VSCode/IDE chose for you.
 
 ### Enjoy!
