@@ -38,7 +38,7 @@ export class CrudServiceService {
     }
 
     GetProducts(){
-      return this.httpclient.get(this.REST_API);
+      return this.httpclient.get<product[]>(this.REST_API);
     }
     GetUsers(){
       return this.httpclient.get(this.REST_API3);

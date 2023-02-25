@@ -4,6 +4,8 @@ import { DashboardService } from 'src/app/dashboard.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import {Chart,registerables  }from 'chart.js/auto';
+import {product} from '../../Service/Product';
+import { CrudServiceService } from 'src/app/Service/crud-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -61,7 +63,7 @@ export class DashboardComponent implements OnInit {
   totalOrders = 0;
   totalRevenue = 0;
 
-  constructor(private service: DashboardService) { }
+  constructor(private service: DashboardService,private productService:CrudServiceService) { }
 
   ngOnInit():void{
     const canvas = document.getElementById('myChart') as HTMLCanvasElement;
@@ -78,6 +80,28 @@ export class DashboardComponent implements OnInit {
           data:this.CatsData,
           options: this.ChartOptions               
         });
+        this.productService.GetProducts().subscribe(products => {
+          const counts: {[category: string]: number} = {};
+          
+          
+          products.forEach(product => {
+           counts[product.category] = (counts[product.category] || 0) + 1;
+          });
+          const categories = Object.keys(counts);
+          const data = categories.map(category => counts[category]);
+          const backgroundColors = ['#73BCA8', '#D2A24D', '#CD6C4B'].slice(0, categories.length);
+          const borderColors = backgroundColors;
+          this.Chart2.data = {
+            labels: categories,
+            datasets: [{
+              data: data,
+              backgroundColor: backgroundColors,
+              borderColor: borderColors
+            }]
+          };
+          this.Chart2.update();
+        });
+        
     this.getTotalUsers()
     this.getTotalProducts()
     this.getTotalRevenue()
