@@ -29,12 +29,10 @@ class DashboardController extends Controller
         return $totalRevenue;
     }
 
-    /*
     public function getTotalOrders()
     {
-        $totalOrders = Product::sum('price');
+        $totalOrders = 10;
 
         return $totalOrders;
     }
-    */
 }

@@ -103,14 +103,24 @@ export class DashboardComponent implements OnInit {
         });
         
     this.getTotalUsers()
+    this.getTotalOrders()
     this.getTotalProducts()
     this.getTotalRevenue()
-    // this.getTotalOrders()
+    
   }
 
   getTotalUsers(){
     this.service.getTotalUsers().subscribe((res:any)=>{
       this.totalUsers= res
+      console.log(res)
+    }, error =>{
+     alert(error)
+    })
+  }
+
+  getTotalOrders(){
+    this.service.getTotalOrders().subscribe((res:any)=>{
+      this.totalOrders= 10
       console.log(res)
     }, error =>{
      alert(error)
@@ -135,16 +145,7 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  /*
-  getTotalRevenue(){
-    this.service.getTotalRevenue().subscribe((res:any)=>{
-      this.totalRevenue= res
-      console.log(res)
-    }, error =>{
-     alert(error)
-    })
-  }
-  */
+  
 }
 @Injectable({
   providedIn: 'root'

@@ -1,11 +1,7 @@
-<!--topnavbar-->
-<div class="topnav shadow ">
-    <img src="..\assets\LOGO-DASH.png" class="logo" >
-    <span class="menu"(click)="openNav(true)"><i class="bi bi-list"></i></span>
-  </div>
-  <!--End of topnav-->
+
   <!--Lest side nav-->
   <div class="sidenav shadow p-1" id="sidebar" [ngStyle]="responsiveMenu">
+    <img src="..\assets\LOGO-DASH.png" class="logo" >
     <ul>
       <li><a routerLink="/dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
       <li><a routerLink="/reports"><i class="bi bi-card-text"></i>
@@ -24,6 +20,4 @@
   
   </div>
   
-  <div class="main-content" [ngStyle]="responsiveContent">
     <router-outlet></router-outlet>
-  </div>

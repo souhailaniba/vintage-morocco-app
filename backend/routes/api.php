@@ -98,7 +98,7 @@ Route::get('/totalProducts',[DashboardController::class,'getTotalProducts']);
 
 Route::get('/totalRevenue',[DashboardController::class,'getTotalRevenue']);
 
-// Route::get('/totalOrders',[DashboardController::class,'getTotalOrders']);
+Route::get('/totalOrders',[DashboardController::class,'getTotalOrders']);
 
 
 /*

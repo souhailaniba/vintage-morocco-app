@@ -22,10 +22,8 @@ export class DashboardService {
     return this.http.get<any>(this.url+'/api/totalRevenue');
   }
 
-  /*
   getTotalOrders(){
     return this.http.get<any>(this.url+'/api/totalOrders');
   }
-  */
 
 }

@@ -19,16 +19,17 @@
     
       }
       
-      .topnav .logo {
-        width: 100px;
-        height: 100px;
-        padding-bottom: 5px;
-        margin-left: 40px;
+      .topnav .logo, .sidenav .logo {
+        width: 120px;
+        padding-bottom: 0px;
+        margin-top: 5px;
+        margin-left: 35px;
+        margin-bottom: 10px;
         
       }
     .menu{
         float: right;
-        margin-right: 10px;
+        margin-right: auto;
         margin-top: 10px;
         font-weight: bold;
         font-size: 30px;
@@ -39,8 +40,8 @@
     /*leftsidebar*/
     .sidenav{
         position: fixed;
-        top:100px;
         overflow: auto;
+        
         height: 100%;
         border-right: 1px solid gray;
         padding: 30px 5px;
@@ -48,6 +49,7 @@
         width:200px;
         z-index:1;
     }
+    
     .sidenav a{
         text-decoration: none;
         padding: 20px 20px ;
