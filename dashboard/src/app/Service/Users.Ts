@@ -1,4 +1,4 @@
-export class product{
+export class user{
     id!:Number;
     name!:String;
     email!:String;

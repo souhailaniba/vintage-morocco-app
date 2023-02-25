@@ -4,8 +4,9 @@ import { Subscription} from 'rxjs';
 import { TokenService } from 'src/app/service/token.service'; 
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
 import { CartsService } from 'src/app/service/carts.service';
@@ -23,12 +24,16 @@ export class ProfileComponent implements OnInit  {
   public address: string = '';
   public userId: string | null = '';
 
+  public comment: string = '';
+
   public name2: string = '';
   public email2: string = '';
   public phone2: string = '';
   public address2: string = '';
   
   profileForm: FormGroup;
+  commentControl: FormControl;
+  reviewForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,8 +43,16 @@ export class ProfileComponent implements OnInit  {
     private router: Router,
     private el: ElementRef,
     private Token: TokenService , 
-    private cart : CartsService
-    ) {}
+    private cart : CartsService,
+    private http: HttpClient
+    ) {
+
+      this.commentControl = this.formBuilder.control('', Validators.required);
+      this.reviewForm = this.formBuilder.group({
+      comment: this.commentControl
+    });
+
+    }
 
 
   ngOnInit(): void {
@@ -51,8 +64,11 @@ export class ProfileComponent implements OnInit  {
       address: [this.address2, Validators.required]
     });
 
+  
+
     this.userId = localStorage.getItem('userId');
     console.log(this.userId);
+    
     this.service.getUser(this.userId).subscribe((data: any) => {
       this.name2 = data.name;
       this.email2 = data.email;
@@ -69,6 +85,8 @@ export class ProfileComponent implements OnInit  {
 
     });
 
+    
+
 
   }
 
@@ -80,6 +98,7 @@ export class ProfileComponent implements OnInit  {
   onSubmit(): void {
     
     const updatedUser = this.profileForm.value;
+    console.log(this.comment);
 
     this.service.updateUser(this.userId, updatedUser).subscribe((data: any) => {
       // handle successful update
@@ -96,9 +115,9 @@ export class ProfileComponent implements OnInit  {
 
   onDeleteUser() {
     this.service.deleteUser(this.userId).subscribe(
-      (res: any) => {
+      (data: any) => {
         // handle successful delete
-        console.log(res);
+        console.log(data);
         // redirect to login page or display a message
         this.onDeleteUserLogout();
       },
@@ -116,6 +135,33 @@ export class ProfileComponent implements OnInit  {
     this.router.navigateByUrl('/Login');
     this.cart.remove();
   }
+  
+
+  sendReview(): void {
+
+    const user_id = this.userId;
+    const comment = this.commentControl.value;
+    const owner = this.name;
+    console.log("form id : " + user_id);
+
+    console.log("form comment : " +  comment);
+    
+    this.service.sendReview(user_id, comment, owner).subscribe(
+      (res: any) => {
+        // handle successful sending
+        console.log(res); 
+        this.commentControl.setValue(''); // clear the comment field after the review is submitted
+        console.log("BIG WIN +++++++");
+        alert("Review successfully sent!"); 
+      },
+      (error: any) => {
+        // handle error
+        console.log(error);
+        console.log("BIG LOSS ------"); 
+      }
+    );
+  }
+
   
 
 }
