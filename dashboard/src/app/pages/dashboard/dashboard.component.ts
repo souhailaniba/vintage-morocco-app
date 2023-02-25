@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
           });
           const categories = Object.keys(counts);
           const data = categories.map(category => counts[category]);
-          const backgroundColors = ['#73BCA8', '#D2A24D', '#CD6C4B'].slice(0, categories.length);
+          const backgroundColors = ['#73BCA8', '#D2A24D', '#CD6C4B', '#ffb703', '#264653','#73BCA8'].slice(0, categories.length);
           const borderColors = backgroundColors;
           this.Chart2.data = {
             labels: categories,
