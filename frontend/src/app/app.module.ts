@@ -29,6 +29,7 @@ import { CartComponent } from './Pages/cart/cart.component';
 const appRoutes: Routes = [
   {path: 'Products' , component:ProductsComponent},
   {path: 'Home' , component:HomeComponent},
+  {path: '' , component:HomeComponent},
   {path: 'Register' , component:RegisterComponent, canActivate: [BeforeLoginService]},
   {path: 'Login' , component:LoginComponent, canActivate: [BeforeLoginService]},
   {path: 'UpdateUser' , component:UpdateuserComponent},
